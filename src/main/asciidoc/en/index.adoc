@@ -1,0 +1,8 @@
+include::_include_index.adoc[]
+include::_include_all.adoc[]
+
+= {doctitle}
+
+coming soon...
+
+<<single_index.adoc#,Single-html version>>
