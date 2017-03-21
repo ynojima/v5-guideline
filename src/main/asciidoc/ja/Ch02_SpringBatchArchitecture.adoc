@@ -159,7 +159,7 @@ JobExecutionContextに格納するオブジェクトは、``java.io.Serializable
 |StepExecution +
 ExecutionContext
 |StepExecutionはStep の「物理的」な実行を示す。JobExecutionとStepExecutionは1対多の関係になる。 +
-JobExecutionと同様に、Step内でデータを共有するための領域ExecutionCotnextがある。データの局所化という観点から、
+JobExecutionと同様に、Step内でデータを共有するための領域としてExecutionCotnextがある。データの局所化という観点から、
 複数のStepで共有しなくてもよい情報はJobのExecutionContextを使用するのでなく、対象StepのExecutionContextを利用したほうがよい。 +
 StepExecutionContextに格納するオブジェクトは、``java.io.Serializable``を実装したクラスでなければならない。
 
@@ -209,7 +209,7 @@ JobLauncherがJobRepositoryからJob名と引数に合致するJobInstanceをデ
 
 * 該当するJobInstanceが存在しない場合は、JobInstanceを新規登録する。
 * 該当するJobInstanceが存在した場合は、紐付いているJobExecutionを復元する。 +
-** {SB}では日次実行など繰り返して起動する可能性のあるJobに対しては、JobInstanceがユニークにするためだけの引数を追加する方法がとられている。
+** {SB}では日次実行など繰り返して起動する可能性のあるJobに対しては、JobInstanceをユニークにするためだけの引数を追加する方法がとられている。
 たとえば、システム時刻であったり、乱数を引数に追加する方法が挙げられる。 +
 本ガイドラインで推奨している方法については<<Ch04_JobParameter.adoc#Ch04_JobParameter_HowToUse_Converter,パラメータ変換クラスについて>>を参照。
 
@@ -463,7 +463,7 @@ image::Ch02_SpringBatchArchitecture_Architecture_ER.png[ER Diagram]
 
 [[Ch02_SpringBatchArch_Detail_JobRepository_Metadata_Version]]
 ==== バージョン
-データベーステーブルの多くは、バージョンカラムが含まれてる。
+データベーステーブルの多くは、バージョンカラムが含まれている。
 {SB}は、データベースへの更新を扱う楽観的ロック戦略を採用しているため、このカラムは重要となる。
 このレコードは、バージョンカラムの値がインクリメントされるたびに更新されることを意味している。
 JobRepositoryが値の更新時に、バージョン番号が変更されている場合、同時アクセスのエラーが発生したことを示すOptimisticLockingFailureExceptionがスローされる。

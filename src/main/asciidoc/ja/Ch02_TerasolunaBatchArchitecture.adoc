@@ -179,10 +179,10 @@ image::Ch02_TerasolunaBatchArchitecture_SynchronizedExec.png[Synchronized Execut
 
 . ジョブスケジューラからジョブを起動するためのシェルスクリプトを起動する。 +
 シェルスクリプトから終了コード(数値)が返却するまでジョブスケジューラは待機する。
-. シェルスクリプトからジョブを起動するために``CommandLineJonRunner``を起動する。 +
-``CommandLineJonRunner``から終了コード(数値)が返却するまでシェルスクリプトは待機する。
-. ``CommandLineJonRunner``はジョブを起動する。ジョブは処理終了後に終了コード(文字列)を``CommandLineJonRunner``へ返却する。 +
-``CommandLineJonRunner``は、ジョブから返却された終了コード(文字列)から終了コード(数値)に変換してシェルスクリプトへ返却する。
+. シェルスクリプトからジョブを起動するために``CommandLineJobRunner``を起動する。 +
+``CommandLineJobRunner``から終了コード(数値)が返却するまでシェルスクリプトは待機する。
+. ``CommandLineJobRunner``はジョブを起動する。ジョブは処理終了後に終了コード(文字列)を``CommandLineJobRunner``へ返却する。 +
+``CommandLineJobRunner``は、ジョブから返却された終了コード(文字列)から終了コード(数値)に変換してシェルスクリプトへ返却する。
 
 
 [[Ch02_TerasolunaBatchArch_LaunchMethod_Async]]

@@ -277,7 +277,7 @@ PostgreSQLはカラムの自動採番に対応しているため、{batch5_short
 {batch5_shortname}では、非同期実行(DBポーリング)で起動したジョブのリスタートは、
 コマンドラインからの実行をガイドしている。
 そのため、``JobOperator``には``start``以外にも``restart``などの起動メソッドがあるが、
-``satrt``メソッド以外は使用していない。
+``start``メソッド以外は使用していない。
 
 .startメソッドの引数
 jobName::

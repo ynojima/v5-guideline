@@ -298,7 +298,7 @@ image::Ch02_TerasolunaBatchStack_Stack_Detail.png[{batch5_fullname} Components o
   ** http://docs.spring.io/spring-batch/trunk/reference/html/index.html[{SB} 3.0]
 
 非同期実行::
-  非同実行を実現する方法として、以下の機能を利用する。
+  非同期実行を実現する方法として、以下の機能を利用する。
 
   DBポーリングによる周期起動:::
   {batch5_fullname}が提供するライブラリを利用する。
